@@ -26,7 +26,7 @@ public class CellMap<K, V> {
     public final ConcurrentFastIteratingHashMap<K, CacheCell<K, V>> map =
             new ConcurrentFastIteratingHashMap<>(new CacheCell[0]);
 
-    public final MetalPool<CacheCell<K, V>> cellPool = new MetalPool<>() {
+    public final MetalPool<CacheCell<K, V>> cellPool = new MetalPool<CacheCell<K, V>>() {
         @Override
         public CacheCell<K, V> create() {
             return newCell();

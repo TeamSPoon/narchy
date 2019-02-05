@@ -26,7 +26,7 @@ class ScrollXYTest {
     static class ScrollGridTest1 {
         public static void main(String[] args) {
 
-            GridModel<String> model = new GridModel<>() {
+            GridModel<String> model = new GridModel<String>() {
 
                 @Override
                 public String get(int x, int y) {

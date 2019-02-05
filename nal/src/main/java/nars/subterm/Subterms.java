@@ -715,7 +715,7 @@ public interface Subterms extends Termlike, Iterable<Term> {
      * TODO check for obvious constant target mismatch
      * @return 0: must unify, -1: impossible, +1: unified already
      */
-    private static int possiblyUnifiableWhileEliminatingEqualAndConstants(TermList xx, TermList yy, Unify u) {
+    /*private*/ static int possiblyUnifiableWhileEliminatingEqualAndConstants(TermList xx, TermList yy, Unify u) {
 
         int n = xx.size();
 

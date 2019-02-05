@@ -282,7 +282,7 @@ public interface Stamp {
         }
 
         if (isCyclic())
-            buffer.append('©');
+            buffer.append((char)194); // ©
 
         buffer.append(Op.STAMP_CLOSER);
 

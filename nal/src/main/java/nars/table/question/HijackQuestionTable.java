@@ -2,6 +2,7 @@ package nars.table.question;
 
 import jcog.data.NumberX;
 import jcog.pri.bag.impl.hijack.PriHijackBag;
+import jcog.reflect.Predicate;
 import nars.NAR;
 import nars.Task;
 import nars.control.op.Remember;
@@ -9,6 +10,7 @@ import nars.task.util.Answer;
 import nars.term.Term;
 
 import java.util.function.Consumer;
+import java.util.function.ToLongFunction;
 import java.util.stream.Stream;
 
 public class HijackQuestionTable extends PriHijackBag<Task, Task> implements QuestionTable {
@@ -25,7 +27,7 @@ public class HijackQuestionTable extends PriHijackBag<Task, Task> implements Que
 
     @Override
     public void match(Answer m) {
-        sample(m.nar.random(), m.tasks.capacity(), m::tryAccept);
+        sample(m.nar.random(), m.tasks.capacity(),(Consumer<? super Task>)m::tryAccept);
     }
 
     /** optimized for cases with zero and one stored tasks */

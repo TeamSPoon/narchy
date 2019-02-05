@@ -29,7 +29,7 @@ public class ByteTopic<X> {
     }
 
     protected Topic<X> newTopic(byte c) {
-        return new ListTopic<>() {
+        return new ListTopic<X>() {
             @Override
             public void enable(Consumer<X> o) {
                 super.enable(o);

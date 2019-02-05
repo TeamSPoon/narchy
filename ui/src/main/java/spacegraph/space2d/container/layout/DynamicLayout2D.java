@@ -9,7 +9,7 @@ public abstract class DynamicLayout2D<X, M extends MutableFloatRect<X>> implemen
 
     protected final FasterList<MutableFloatRect<X>> nodes = new FasterList<>();
 
-    private final MetalPool<MutableFloatRect<X>> nodesPool = new MetalPool<>() {
+    private final MetalPool<MutableFloatRect<X>> nodesPool = new MetalPool<MutableFloatRect<X>>() {
 
         @Override
         public MutableFloatRect<X> create() {

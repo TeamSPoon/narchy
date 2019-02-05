@@ -694,7 +694,7 @@ public class Grok implements Serializable {
             return text.substring(m.getStart(), m.getEnd());
         }
 
-        static final Comparator<Grok> MyGrokComparator = new Comparator<>() {
+        static final Comparator<Grok> MyGrokComparator = new Comparator<Grok>() {
 
             @Override
             public int compare(Grok g1, Grok g2) {

@@ -139,25 +139,29 @@ public class TruthLab extends Gridding {
     class TaskTimeline extends TruthTimeline {
 
         public TaskTimeline(Task task, long start, long end, int samplePeriod) {
-            super(start, end, samplePeriod, (w) -> task.truth(w, dur));
-
+            super(start, end, samplePeriod, (w) ->
+            {if(false) throw new java.lang.Error("shoiuld pass this.dur as an arg? naw it was final");
+             return task.truth(w, dur); });
+            
             this.label = task.toString();
-
+            
             Draw.colorHash(task.term().root(), labelColor);
         }
     }
 
-    private final int dur = 1;
+    static private final int  dur = 1;
 
     class BeliefTableTimeline extends TruthTimeline {
 
 
         public BeliefTableTimeline(Compound t, BeliefTable b, long start, long end, int samplePeriod, boolean truthOrProjectedTaskTruth) {
             super(start, end, samplePeriod, (w) -> {
-                if (truthOrProjectedTaskTruth) {
-                    return b.truth(w, w, nar);
+            	if(true) throw new java.lang.Error("shoiuld pass this.nar as an arg?");
+                final NAR tnar = null; //= this.nar;
+				if (truthOrProjectedTaskTruth) {
+                    return b.truth(w, w, tnar );
                 } else {
-                    Task x = b.match(w, w, null, nar);
+                    Task x = b.match(w, w, null, tnar);
                     return x != null ? x.truth(w, dur) : null;
 
                 }

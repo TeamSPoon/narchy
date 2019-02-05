@@ -408,7 +408,7 @@ public class MyConcurrentRadixTree<X> /* TODO extends ReentrantReadWriteLock */ 
         clear();
     }
 
-    private final static FasterList<Node> emptyList = new FasterList<>(0, new Node[] {}) {
+    private final static FasterList<Node> emptyList = new FasterList<Node>(0, new Node[] {}) {
         @Override
         public boolean add(Node newItem) {
             throw new UnsupportedOperationException();

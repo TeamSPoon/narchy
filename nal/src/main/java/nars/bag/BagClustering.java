@@ -68,7 +68,7 @@ public class BagClustering<X> {
         this.net = new NeuralGasNet(model.dims, centroids, model::distanceSq);
 
         PriMerge merge = PriMerge.max;
-        ArrayBag<X, VLink<X>> b = new ArrayBag<>(merge, initialCap) {
+        ArrayBag<X, VLink<X>> b = new ArrayBag<X, VLink<X>>(merge, initialCap) {
 
             @Override
             public X key(VLink<X> xvLink) {

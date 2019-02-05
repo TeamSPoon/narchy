@@ -20,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Random;
 import java.util.function.Predicate;
+import java.util.function.ToLongFunction;
 
 import static nars.Op.*;
 import static nars.time.Tense.XTERNAL;
@@ -80,7 +81,7 @@ public class DynTaskify extends DynEvi {
         long s, e;
 
         long earliest;
-        long latest = d.maxValue(Stamp::end);
+        long latest = d.maxValue((ToLongFunction<? super Task>)Stamp::end);
         if (latest == ETERNAL) {
             //all are eternal
             s = e = ETERNAL;

@@ -142,7 +142,7 @@ public class LoadStaticZipfBenchmark {
             .of(Long.class, Long.class)
             .disableStatistics(true)
             .entryCapacity(CAPACITY)
-            .loader(new CacheLoader<>() {
+            .loader(new CacheLoader<Long,Long>() {
               public Long load(final Long key) throws Exception {
                 amortizedSleep();
                 return punishMiss(key);

@@ -61,7 +61,7 @@ public class TimeGraph extends MapNodeGraph<Event, TimeSpan> {
 //            .linkedHashSetValues()
 //            .build();
 
-    public final Map<Term, Collection<Event>> byTerm = new HashMap<>() {
+    public final Map<Term, Collection<Event>> byTerm = new HashMap<Term, Collection<Event>>() {
         @Override
         public Collection<Event> get(Object key) {
             Collection<Event> x = super.get(key);

@@ -80,7 +80,7 @@ public class ConceptGraph2D extends Graph2D<Term> {
 
 
     public Graph2DUpdater<Term> getLayout() {
-        return new ForceDirected2D<>() {
+        return new ForceDirected2D<Term>() {
 
             @Override
             public void init(Graph2D<Term> g, NodeVis<Term> newNode) {

@@ -266,7 +266,7 @@ public class SpaceGraphPhys3D<X> extends JoglSpace implements Iterable<Spatial<X
     }
 
     private DynamicListSpace<X> add(Spatial<X>... s) {
-        DynamicListSpace<X> l = new DynamicListSpace<>() {
+        DynamicListSpace<X> l = new DynamicListSpace<X>() {
 
             final List<Spatial<X>> ls = new FasterList<Spatial<X>>().with(s);
 

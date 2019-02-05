@@ -132,7 +132,7 @@ public class Derivation extends PreDerivation {
     /**
      * second layer additional substitutions
      */
-    public final Map<Term, Term> retransform = new UnifiedMap<>() {
+    public final Map<Term, Term> retransform = new UnifiedMap<Term, Term>() {
         @Override
         public Term put(Term key, Term value) {
             if (key.equals(value))

@@ -6,6 +6,7 @@ import nars.NAR;
 import nars.NARS;
 import nars.test.impl.DeductiveChainTest;
 import spacegraph.SpaceGraph;
+import spacegraph.space2d.Surface;
 import spacegraph.space2d.container.Bordering;
 import spacegraph.space2d.container.grid.Gridding;
 import spacegraph.space2d.widget.text.BitmapLabel;
@@ -27,7 +28,7 @@ public class NetPanel extends Bordering {
         north(new BitmapLabel(net.peer.name() + " " + net.peer.addr));
         this.status = new BitmapLabel();
 
-        set(new DurSurface<>(status, n) {
+        set(new DurSurface<Surface>(status, n) {
             @Override protected void update() {
                 status.text(
                     //net.peer.summary().replace(", (", "\n") + "\n" +

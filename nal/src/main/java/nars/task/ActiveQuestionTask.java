@@ -130,7 +130,7 @@ public class ActiveQuestionTask extends NALTask.NALTaskX implements Consumer<Tas
     }
 
     ArrayBag<Task, PriReference<Task>> newBag(int history) {
-        return new PLinkArrayBag<>(PriMerge.max, history) {
+        return new PLinkArrayBag<Task>(PriMerge.max, history) {
             @Override
             public void onAdd(PriReference<Task> t) {
                 eachAnswer.accept(ActiveQuestionTask.this, t.get());

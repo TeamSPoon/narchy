@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 /** use with caution */
 abstract public class ArrayUnenforcedSortedSet<X> extends ArrayUnenforcedSet<X> implements SortedSet<X> {
 
-    public static final SortedSet empty = new ArrayUnenforcedSortedSet<>() {
+    public static final SortedSet empty = new ArrayUnenforcedSortedSet<Object>() {
 
         @Override
         public Stream<Object> stream() {

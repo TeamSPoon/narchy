@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import spacegraph.SpaceGraph;
 import spacegraph.space2d.container.Bordering;
 import spacegraph.space2d.container.graph.Timeline2D;
+import spacegraph.space2d.container.graph.Timeline2D.SimpleEvent;
 import spacegraph.space2d.container.grid.Gridding;
 import spacegraph.space2d.container.unit.Scale;
 import spacegraph.space2d.widget.button.CheckBox;
@@ -124,7 +125,7 @@ public class SpaceLog {
         //Surface space = new OsmSpace(i.osm).surface();
 
 
-        Surface timeline = new Timeline2D<>(time,
+        Surface timeline = new Timeline2D<SimpleEvent>(time,
                 e -> e.set(new Scale(
                         new PushButton(e.id.name) {
                             final int eHash = e.id.name.hashCode();

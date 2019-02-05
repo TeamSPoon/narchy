@@ -204,7 +204,7 @@ public interface Task extends Truthed, Stamp, Termed, ITask, TaskRegion, UnitPri
         return validIndep(x, safe);
     }
 
-    private static boolean validIndep(Term x, boolean safe) {
+    /*private*/ static boolean validIndep(Term x, boolean safe) {
         /* A statement sentence is not allowed to have a independent variable as subj or pred"); */
         switch (x.varIndep()) {
             case 0:
@@ -306,7 +306,7 @@ public interface Task extends Truthed, Stamp, Termed, ITask, TaskRegion, UnitPri
         return true;
     }
 
-    private static boolean fail(@Nullable Term t, String reason, boolean safe) {
+    /*private*/ static boolean fail(@Nullable Term t, String reason, boolean safe) {
         if (safe)
             return false;
         else

@@ -1050,7 +1050,7 @@ public class Occurrify extends TimeGraph {
             /**
              * requires single premise, or if double premise that there is temporal intersection of task and belief
              */
-            private final PREDICATE<Derivation> intersectFilter = new AbstractPred<>(Atomic.the("TimeIntersects")) {
+            private final PREDICATE<Derivation> intersectFilter = new AbstractPred<Derivation>(Atomic.the("TimeIntersects")) {
                 @Override
                 public boolean test(Derivation d) {
                     return d.concSingle || d.taskBeliefTimeIntersects[0] != TIMELESS;

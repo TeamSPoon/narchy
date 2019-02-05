@@ -74,7 +74,7 @@ public final class NotEqualConstraint extends RelationConstraint {
 //        }
     }
 
-    static final PREDICATE<PreDerivation> TaskOrBeliefHasNeg = new AbstractPred<>($$("TaskOrBeliefHasNeg")) {
+    static final PREDICATE<PreDerivation> TaskOrBeliefHasNeg = new AbstractPred<PreDerivation>($$("TaskOrBeliefHasNeg")) {
 
         @Override
         public boolean test(PreDerivation d) {

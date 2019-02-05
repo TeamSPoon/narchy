@@ -13,7 +13,7 @@ public class MutableMapContainer<K, V> extends AbstractMutableContainer {
     /**
      * "cells" of the container; maintain the mapping between the indexed keys and their "materialized" representations or projections
      */
-    protected final CellMap<K, V> cells = new CellMap<>() {
+    protected final CellMap<K, V> cells = new CellMap<K,V>() {
         @Override
         protected CacheCell<K, V> newCell() {
             return new SurfaceCacheCell<>();

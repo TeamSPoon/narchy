@@ -17,6 +17,7 @@
  */
 package alice.tuprolog;
 
+import java.lang.*;
 import alice.tuprolog.event.*;
 import alice.tuprolog.lib.BasicLibrary;
 import alice.tuprolog.lib.IOLibrary;
@@ -924,7 +925,7 @@ public class Prolog {
 
         try {
 
-            return new Iterator<>() {
+            return new Iterator<Term>() { // @source level 1.8 (Anonymous Classes cannot use <>_
 
                 final Solution s = run(goal);
 

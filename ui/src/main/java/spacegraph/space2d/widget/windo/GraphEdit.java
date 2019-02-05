@@ -61,7 +61,7 @@ public class GraphEdit<S extends Surface> extends MutableMapContainer<Surface, W
      * TODO use more efficient graph representation
      * TODO encapsulate so its private
      */
-    public final MapNodeGraph<Surface, Wire> links = new MapNodeGraph<>() {
+    public final MapNodeGraph<Surface, Wire> links = new MapNodeGraph<Surface, Wire>() {
         @Override
         protected void onRemoved(Node<Surface, Wire> r) {
             r.edges(true, true).forEach(e -> e.id().remove());

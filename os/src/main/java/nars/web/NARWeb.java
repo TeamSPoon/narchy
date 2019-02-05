@@ -162,7 +162,7 @@ abstract public class NARWeb extends WebServer {
         }
 
         //TODO <URI,NAR>
-        final CustomConcurrentHashMap<String, NAR> reasoners = new CustomConcurrentHashMap<>(
+        final CustomConcurrentHashMap<String, NAR> reasoners = new CustomConcurrentHashMap<String, NAR>(
                 STRONG, EQUALS, WEAK, IDENTITY, 64) {
             @Override
             protected void reclaim(NAR n) {

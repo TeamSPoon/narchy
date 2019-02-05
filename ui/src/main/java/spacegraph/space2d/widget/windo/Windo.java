@@ -17,6 +17,7 @@ import static spacegraph.space2d.widget.windo.util.DragEdit.MOVE;
 /**
  * draggable panel
  */
+@SuppressWarnings("unchecked")
 public class Windo extends MutableUnitContainer {
 
     private final static float resizeBorder = 0.1f;

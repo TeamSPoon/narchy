@@ -54,7 +54,7 @@ public class DefaultGraphFactory<N, E> implements GraphFactory<N, E> {
         final N f_b = b;
         final E f_e = e;
 
-        return new Edge<>() {
+        return new Edge<N,E>() {
 
             @Override
             public N getNodeA() {

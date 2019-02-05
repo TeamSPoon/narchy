@@ -99,7 +99,7 @@ public class GetPutBenchmark {
             .disableStatistics(true)
             .eternal(true)
             .build();
-        return new GetPutCache<>() {
+        return new GetPutCache<K,V>() {
 
           @Override
           public V get(final K key) {
@@ -122,7 +122,7 @@ public class GetPutBenchmark {
             .initialCapacity(capacity)
             .maximumSize(capacity)
             .build();
-        return new GetPutCache<>() {
+        return new GetPutCache<K,V>() {
 
           @Override
           public V get(final K key) {
@@ -144,7 +144,7 @@ public class GetPutBenchmark {
             .<V>withCapacity(capacity)
             .setStrictCapacity(true)
             .buildSparse(3.0);
-        return new GetPutCache<>() {
+        return new GetPutCache<K,V>() {
 
           @Override
           public V get(final K key) {
@@ -169,7 +169,7 @@ public class GetPutBenchmark {
         };
 
         final HijackMemoize<K,V> cache = new HijackMemoize<>(insert, capacity, REPROBES);
-        return new GetPutCache<>() {
+        return new GetPutCache<K,V>() {
 
           @Override
           public V get(final K key) {

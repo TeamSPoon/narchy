@@ -65,7 +65,7 @@ final class Memoizer0 implements InvocationHandler {
     }
 
     private static Map<CacheKey, CacheValue> allocCache(final int maxSize) {
-        return Collections.synchronizedMap(new LinkedHashMap<>() {
+        return Collections.synchronizedMap(new LinkedHashMap<CacheKey, CacheValue>() {
             private static final long serialVersionUID = 42L;
 
             @Override

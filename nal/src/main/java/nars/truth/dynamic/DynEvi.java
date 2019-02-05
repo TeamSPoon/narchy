@@ -24,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import java.util.Random;
 import java.util.function.Function;
+import java.util.function.ToLongFunction;
 
 import static nars.Op.*;
 
@@ -70,7 +71,7 @@ public class DynEvi extends FasterList<Task> implements TaskRegion {
 
     @Override
     public long end() {
-        return maxValue(LongInterval::end);
+        return maxValue((ToLongFunction<? super Task>)LongInterval::end);
     }
 
     @Override

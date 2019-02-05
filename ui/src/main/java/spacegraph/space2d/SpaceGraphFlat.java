@@ -39,7 +39,7 @@ public class SpaceGraphFlat extends JoglSpace {
             add(finger.cursorSurface());
             //addOverlay(this.keyboard.keyFocusSurface(cam));
 
-        Ortho<MutableListContainer> hud = new Ortho<>(this, new MutableListContainer(),
+        Ortho<MutableListContainer> hud = new Ortho<MutableListContainer>(this, new MutableListContainer(),
                 keyboard) {
             @Override
             protected boolean autosize() {

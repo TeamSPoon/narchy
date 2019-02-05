@@ -11,6 +11,7 @@ import nars.truth.Stamp;
 import org.eclipse.collections.api.block.predicate.primitive.LongObjectPredicate;
 
 import java.util.List;
+import java.util.function.ToLongFunction;
 
 import static nars.time.Tense.*;
 
@@ -29,7 +30,7 @@ public class DynamicConjTruth {
             long range;
             if (start!=ETERNAL) {
                 //adjust end for the internal sequence range
-                end = ((FasterList<Task>) components).maxValue(Stamp::end);
+                end = ((FasterList<Task>) components).maxValue((ToLongFunction<? super Task>)Stamp::end);
                 range = end - start;
             } else {
                 range = ETERNAL;

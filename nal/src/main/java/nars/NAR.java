@@ -107,7 +107,7 @@ public class NAR extends Param implements Consumer<ITask>, NARIn, NAROut, Cycled
     /**
      * cause->value table
      */
-    public final FasterList<Cause> causes = new FasterList<>(512) {
+    public final FasterList<Cause> causes = new FasterList<Cause>(512) {
         @Override
         protected Cause[] newArray(int newCapacity) {
             return new Cause[newCapacity];

@@ -11,7 +11,7 @@ import java.util.function.Function;
 /** decoration inference for dynamic representational surfaces of arbitrary objects */
 abstract public class IconBuilder<X> implements Function<X,Surface> {
 
-    public static final IconBuilder<Object> simpleBuilder = new IconBuilder<>() {
+    public static final IconBuilder<Object> simpleBuilder = new IconBuilder<Object>() {
 
         @Override
         public Surface apply(Object o) {

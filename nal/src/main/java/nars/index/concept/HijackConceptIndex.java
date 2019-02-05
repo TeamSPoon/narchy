@@ -51,7 +51,7 @@ public class HijackConceptIndex extends AbstractConceptIndex {
 
         getBoost = (float) (1f/Math.sqrt(capacity));
 
-        this.table = new PriLinkHijackBag<>(capacity, reprobes) {
+        this.table = new PriLinkHijackBag<Termed,PLink<Termed>>(capacity, reprobes) {
 
             {
                 resize(capacity);

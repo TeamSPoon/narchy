@@ -100,7 +100,7 @@ abstract public class UnifyTerm extends AbstractPred<Derivation> {
     }
 
 
-    public final static PREDICATE<Derivation> preUnify = new AbstractPred<>($$("preUnify")) {
+    public final static PREDICATE<Derivation> preUnify = new AbstractPred<Derivation>($$("preUnify")) {
         @Override
         public boolean test(Derivation d) {
             d.clear();

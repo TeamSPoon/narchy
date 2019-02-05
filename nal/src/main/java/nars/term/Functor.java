@@ -115,7 +115,7 @@ abstract public class Functor extends NodeConcept implements PermanentConcept, B
 
     public static LambdaFunctor r0(String termAtom, Supplier<Runnable> ff) {
         Atom fName = fName(termAtom);
-        return f0(fName, () -> new AbstractPred<>($.inst($.quote(Util.uuid64()), fName)) {
+        return f0(fName, () -> new AbstractPred<Object>($.inst($.quote(Util.uuid64()), fName)) {
 
             @Override
             public boolean test(Object o) {

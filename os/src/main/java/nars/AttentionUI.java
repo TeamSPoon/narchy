@@ -43,7 +43,7 @@ public class AttentionUI {
                         }
                     }
                 })
-                .update(new ForceDirected2D<>() {
+                .update(new ForceDirected2D<AttNode>() {
                     @Override
                     protected void size(MutableFloatRect<AttNode> m, float a) {
                         float q =

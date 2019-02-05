@@ -17,7 +17,7 @@ abstract public class ListModel<X> implements GridModel<X> {
     }
 
     public static <X> ListModel<X> of(List<X> items) {
-        return new ListModel<>() {
+        return new ListModel<X>() {
 
             @Override
             public X get(int index) {

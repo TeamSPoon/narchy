@@ -1,6 +1,8 @@
 package jcog.net;
 
 import jcog.Util;
+import jcog.net.UDPeer.Discoverability;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -142,6 +144,8 @@ abstract public class UDiscover<P>  {
             }
         }
     }
+
+
 
     
 

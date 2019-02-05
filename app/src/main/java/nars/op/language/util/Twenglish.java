@@ -122,14 +122,14 @@ public class Twenglish {
     /**
      * substitutions
      */
-    public final Map<String, String> sub = new HashMap();
+    public final Map<String, String> sub = new HashMap<String, String>();
 
 
     
     boolean inputProduct = true;
 
 
-    public static final Map<String, String> POS = new HashMap<>() {{
+    public static final Map<String, String> POS = new HashMap<String, String>() {{
         
 
         put("i", "pronoun");

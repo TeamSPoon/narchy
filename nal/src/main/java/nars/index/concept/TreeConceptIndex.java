@@ -33,7 +33,7 @@ public class TreeConceptIndex extends AbstractConceptIndex implements Consumer<N
 
     public TreeConceptIndex(int sizeLimit) {
 
-        this.concepts = new TermRadixTree<>() {
+        this.concepts = new TermRadixTree<Termed>() {
 
             @Override
             public AbstractBytes key(Object k) {

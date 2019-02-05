@@ -275,7 +275,8 @@ public enum Op {
             };
 
 
-    public static final char NullSym = '☢';
+    public static final char NullSym = '\u2622'; //☢ = radioactive symbol?
+    
 
     public static final char imIntSym = '\\';
     public static final char imExtSym = '/';

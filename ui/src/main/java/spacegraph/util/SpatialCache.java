@@ -14,7 +14,7 @@ class SpatialCache<X, Y extends Spatial<X>> {
 
     public SpatialCache(SpaceGraphPhys3D<X> space, int capacity) {
         this.space = space;
-        cache = new MRUMap<>(capacity) {
+        cache = new MRUMap<X, Y>(capacity) {
             @Override
             protected void onEvict(Map.Entry<X, Y> entry) {
                 space.remove(entry.getValue());

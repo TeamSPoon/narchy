@@ -46,7 +46,7 @@ public class CircularArrayList<E> extends AbstractList<E> implements RandomAcces
         if (max == 0)
             return Collections.emptyIterator();
 
-        return new Iterator<>() {
+        return new Iterator<E>() {
 
             int pos;
 

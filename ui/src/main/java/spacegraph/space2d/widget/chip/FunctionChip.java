@@ -17,7 +17,7 @@ public class FunctionChip<X,Y> extends AbstractFunctionChip<X,Y> {
 
     /** TODO atomic */
     public FunctionChip<X,Y> buffered() {
-        return new FunctionChip<>(this.in.type, this.out.type, new Function<>() {
+        return new FunctionChip<>(this.in.type, this.out.type, new Function<X,Y>() {
             X last = null;
             Y lastY = null;
 

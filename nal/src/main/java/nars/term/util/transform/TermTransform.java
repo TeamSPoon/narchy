@@ -130,7 +130,7 @@ public interface TermTransform {
     TermTransform queryToDepVar = variableTransform(VAR_QUERY, VAR_DEP);
     TermTransform indepToDepVar = variableTransform(VAR_INDEP, VAR_DEP);
 
-    private static TermTransform variableTransform(Op from, Op to) {
+    /*private*/ static TermTransform variableTransform(Op from, Op to) {
         return new TermTransform() {
             @Override
             public Term transformAtomic(Atomic atomic) {

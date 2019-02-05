@@ -23,8 +23,8 @@ public class TermFrame extends JFrame implements ActionListener{
   
 	private static final long serialVersionUID = 1L;
 
-/**Transforms prolog terms into trees.*/
-  public static final ToTree<Term> term2tree= new ToTree<>() {
+/**Transforms prolog terms into trees.*/ 
+  public static final ToTree<Term> term2tree= new ToTree<Term>() {
     @Override
     public Node makeTreeFrom(Term term) {
         Node node = new Node(String.valueOf(term));

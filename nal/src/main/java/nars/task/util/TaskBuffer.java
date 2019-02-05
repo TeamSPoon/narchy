@@ -231,7 +231,7 @@ abstract public class TaskBuffer implements Consumer<ITask> {
                         return 0;
                     }
                 },
-                new PriBuffer<>(PriMerge.max) {
+                new PriBuffer<ITask>(PriMerge.max) {
                     @Override
                     protected void merge(Prioritizable existing, ITask incoming, float pri, OverflowDistributor<ITask> overflow) {
                         TaskBuffer.merge((ITask)existing, incoming);

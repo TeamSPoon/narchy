@@ -10,6 +10,7 @@ import spacegraph.space2d.container.unit.UnitContainer;
 import java.util.function.BiConsumer;
 
 
+@SuppressWarnings("unchecked")
 public class TextEdit extends ScrollXY<TextEditModel>  {
 
     public final MyTextEditModel model;
@@ -50,9 +51,9 @@ public class TextEdit extends ScrollXY<TextEditModel>  {
         text(initialText);
     }
 
-    public static Appendable out() {
+	public static Appendable out() {
         TextEdit te = new TextEdit();
-        return new AppendableUnitContainer<>(te
+        return new AppendableUnitContainer(te
                 .viewMin(new v2(8,8))
                 .viewMax(new v2(32,32))
                 .view(8, 8)) {

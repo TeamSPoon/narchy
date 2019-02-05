@@ -40,7 +40,7 @@ public class BagView<X extends Prioritized> extends TabMenu {
                         },
                         "histo", () -> bagHistogram(bag::iterator, 20, nar),
                         "treechart", () -> {
-                            BagChart<X> b = new BagChart<>(bag, (Graph2D.NodeVis<X> n) -> {
+                            BagChart<X> b = new BagChart<X>(bag, (Graph2D.NodeVis<X> n) -> {
                                 Prioritized p = n.id;
                                 float pri = n.pri = Math.max(p.priElseZero(), 1f/(2*bag.capacity()));
                                 n.color(pri, 0.25f, 0.25f);

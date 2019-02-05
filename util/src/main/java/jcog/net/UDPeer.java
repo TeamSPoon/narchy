@@ -192,7 +192,7 @@ public class UDPeer extends UDP {
 
         them.setCapacity(PEERS_CAPACITY);
 
-        seen = new PriHijackBag<>(SEEN_CAPACITY, 3) {
+        seen = new PriHijackBag<Msg,UDPeer.Msg>(SEEN_CAPACITY, 3) {
 
             @NotNull
             @Override
@@ -206,7 +206,7 @@ public class UDPeer extends UDP {
             }
         };
 
-        discover = discovery ? new UDiscover<>(new Discoverability(me, addr)) {
+        discover = discovery ? new UDiscover<Discoverability>(new Discoverability(me, addr)) {
             @Override
             protected void found(Discoverability who, InetAddress addr, int port) {
                 //TODO hard exclude the UDPeer itself (ie. if addr and port equal)

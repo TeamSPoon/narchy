@@ -35,7 +35,7 @@ public final class DequeCleaningPool<X> {
     final Supplier<X> builder;
     final Consumer<X> cleaner;
 
-    private final MetalPool<X> pool = new MetalPool<>() {
+    private final MetalPool<X> pool = new MetalPool<X>() {
 
         @Override
         public X create() {

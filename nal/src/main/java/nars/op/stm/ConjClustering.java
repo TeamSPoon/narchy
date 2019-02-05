@@ -69,7 +69,7 @@ public class ConjClustering extends Causable {
 
         this.in = nar.newChannel(this);//.buffered();
 
-        this.model = new BagClustering.Dimensionalize<>(5) {
+        this.model = new BagClustering.Dimensionalize<Task>(5) {
 
             /** # durs (in-)sensitivity factor */
             static final double TIME_SENSITIVITY = 8;

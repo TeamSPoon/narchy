@@ -264,7 +264,7 @@ public class MapDef {
 
         if (Constants.OS == Constants.MAC) {
             
-            if (Options.remap_hash && (e.getKeyChar() == '�')) {
+            if (Options.remap_hash && (e.getKeyChar() == '\uFFFD')) { //'�' 
                 return ((characterDef) && (this.keyChar == '#'));
             }
 

@@ -13,6 +13,7 @@ import jcog.pri.bag.impl.hijack.PriHijackBag;
 import jcog.pri.op.PriMerge;
 import nars.NAR;
 import nars.Param;
+import nars.Task;
 import nars.link.Activate;
 import nars.link.TaskLink;
 import nars.term.Term;
@@ -29,7 +30,21 @@ import static jcog.pri.op.PriMerge.plus;
 /** implements a multi-level cache using a Concept Bag as a sample-able short-target memory */
 abstract public class AbstractConceptIndex extends ConceptIndex {
 
-    /** short target memory, TODO abstract and remove */
+    private final class PriBufferExtension extends PriBuffer<TaskLink>
+	{
+		private PriBufferExtension(PriMerge merge, boolean concurrent)
+		{
+			super(merge, concurrent);
+		}
+
+		@Override
+		protected void merge(Prioritizable existing, TaskLink incoming, float pri, OverflowDistributor<TaskLink> overflow) {
+		    //super.merge(existing, incoming, pri, overflow);
+		    ((TaskLink)existing).merge(incoming, Param.tasklinkMerge);
+		}
+	}
+
+	/** short target memory, TODO abstract and remove */
     //public Bag<Term, Activate> active = Bag.EMPTY;
 
     public Bag<TaskLink, TaskLink> active = Bag.EMPTY;
@@ -63,14 +78,8 @@ abstract public class AbstractConceptIndex extends ConceptIndex {
 
 
         active =
-            new BufferedBag.SimplestBufferedBag<>( arrayBag(), //hijackBag()
-                new PriBuffer<>(Param.tasklinkMerge, nar.exe.concurrent()) {
-                    @Override
-                    protected void merge(Prioritizable existing, TaskLink incoming, float pri, OverflowDistributor<TaskLink> overflow) {
-                        //super.merge(existing, incoming, pri, overflow);
-                        ((TaskLink)existing).merge(incoming, Param.tasklinkMerge);
-                    }
-                }
+            new BufferedBag.SimplestBufferedBag( arrayBag(), //hijackBag()
+                new PriBufferExtension(Param.tasklinkMerge, nar.exe.concurrent())
             );
 
         active.setCapacity(activeCapacity.intValue());
@@ -103,7 +112,7 @@ abstract public class AbstractConceptIndex extends ConceptIndex {
 //    }
 
     protected Bag<TaskLink, TaskLink> arrayBag() {
-        return new ArrayBag<>(
+        return new ArrayBag<TaskLink,TaskLink>(
                 activeCapacity.intValue(),
                 Param.tasklinkMerge,
                 new HashMap<>(activeCapacity.intValue() * 2, 0.99f)

@@ -50,7 +50,8 @@ subprojects {
 
     apply plugin: 'idea'
     apply plugin: 'java'
-//    apply plugin: 'maven'
+    apply plugin: 'maven'
+    apply plugin: 'eclipse'
     apply plugin: "com.github.ben-manes.versions"
 
 
@@ -86,8 +87,8 @@ subprojects {
 
     tasks.withType(JavaCompile) {
 
-        sourceCompatibility = '12'
-        targetCompatibility = '12'
+        sourceCompatibility = '1.8'
+        targetCompatibility = '10'
 
         options.encoding = 'UTF-8'
         options.incremental = true // one flag, and things will get MUCH faster //doesnt seem compatible with jdk 11
@@ -144,4 +145,26 @@ subprojects {
 //        cssAmber = 'orange'
 //        cssGreen = 'green'
 //    }
+	task createPom  {
+	    pom {
+		project {
+		    groupId 'narchy'
+		    artifactId 'narchy'
+		    version '1.0.0-SNAPSHOT'
+	
+		    inceptionYear '2008'
+		    licenses {
+			license {
+			    name 'The Apache Software License, Version 2.0'
+			    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+			    distribution 'repo'
+			}
+		    }
+		}
+	    }.writeTo("pom.xml")
+	}
+	
 }
+
+
+

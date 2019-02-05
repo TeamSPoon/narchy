@@ -92,7 +92,7 @@ public class VoronoiDiagram {
     private final v2 upper = new v2();
 
     private final IDynamicStack<VoronoiDiagramTask> taskPool =
-            new MutableStack<>(50) {
+            new MutableStack<VoronoiDiagramTask>(50) {
                 @Override
                 protected VoronoiDiagramTask newInstance() {
                     return new VoronoiDiagramTask();

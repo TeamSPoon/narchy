@@ -3,6 +3,7 @@ package nars.op;
 import jcog.Paper;
 import jcog.Util;
 import jcog.memoize.Memoizers;
+import jcog.reflect.Predicate;
 import nars.$;
 import nars.NAR;
 import nars.Op;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Comparator;
 import java.util.ListIterator;
 import java.util.Set;
+import java.util.function.BiPredicate;
 import java.util.function.Function;
 
 import static nars.Op.CONJ;
@@ -183,7 +185,7 @@ public class Factorize {
             int pathMin = s.subs() == 1 ? 2 : 1; //dont factor the direct subterm of 1-arity compound (ex: negation, {x}, (x) )
             if (s instanceof Compound) {
                 int ii = i;
-                s.pathsTo((Term v) -> true, v -> true, (path, what) -> {
+                s.pathsTo( (Term v) -> true,v -> true, (BiPredicate<ByteList, Term>)(path, what) -> {
 
                     //if (what.unneg().volume() > 1) { //dont remap any atomics
                     if (!(what instanceof Variable)) { //dont remap variables

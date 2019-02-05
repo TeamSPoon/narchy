@@ -58,7 +58,7 @@ public class Graph2D<X> extends MutableMapContainer<X, Graph2D.NodeVis<X>> {
 //            return v;
 //        }
 //    };
-    private final MetalPool<EdgeVis<X>> edgePool = new MetalPool<>() {
+    private final MetalPool<EdgeVis<X>> edgePool = new MetalPool<EdgeVis<X>>() {
         @Override
         public EdgeVis<X> create() {
             return new EdgeVis<>();
